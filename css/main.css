@@ -90,9 +90,15 @@ body {
 }
 .app-header { background: #0998cc; height: 3em; margin-bottom: 1em; min-height: 4em;}
 .app-header-icon-box { float: right;  margin: 0.5em 0;}
-.app-header-icon {padding: 0.5em 0; width: 3em; border-radius: 6px; background: #41b8e3; display: inline-block; float: left; color: white; margin-right: 0.5em; text-align: center;}
-.app-header-icon:hover { background: #97d1e7;}
-.app-header-icon i { font-size: 1.5em;}
+.filter-icons { margin: 0.2em auto .8em; width: 90%; text-align: center;}
+.app-header-icon, .filter-icons i {padding: 0.5em 0; width: 3em; border-radius: 6px; background: #41b8e3; display: inline-block; float: left; color: white; margin-right: 0.5em; text-align: center;}
+.filter-icons i { width: 2em; float: none; background: #0998cc;}
+.app-header-icon:hover, .filter-icons i:hover { background: #97d1e7;}
+.filter-icons i:hover { background: #41b8e3;}
+#hotness { display:inline-block;}
+#hotness span {width: 3em; height: 3em; display: inline-block; border-radius: 6px;}
+.cold-filter { background: #002240;}
+.app-header-icon i, .filter-icons i { font-size: 1.5em;}
 .event { border: #0998cc 2px solid; border-radius: 6px; width: 90%; height: 4em; padding: 0.5em; margin: 0 auto 1em;}
 .event:hover { background: #97d1e7;}
 .venueType { float: left; background: #0998cc; padding: 0.5em; display: inline-block; border-radius: 6px; color: white; margin-right: 1em; min-width: 3.2em; text-align: center;}
@@ -105,6 +111,7 @@ body {
 .numCheckins {margin-left: 0.2em;}
 .distanceFromMe { font-size: 0.75em; line-height: 20px; font-weight: bold;}
 .moreArrow { min-width: 0.6em; padding: 0 0 0 0.3em; font-size: 4em; color: #0998cc; float: right;}
+.event:hover .moreArrow i { color: white;}
 
 
 
