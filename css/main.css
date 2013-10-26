@@ -105,6 +105,7 @@ body {
 .venueType .fa { font-size: 3em;}
 .event h2 { font-size: 0.9em; margin: -0.3em 0 0 0;}
 .eventInfo { color: #666; width: 56%; float: left;}
+.results-list { list-style: none;}
 .eventInfo .fa { font-size: 1em;}
 .eventInfo .hot .fa { color: #D15608;}
 .temperature { font-size: 0.75em; line-height: 20px;}
@@ -112,12 +113,6 @@ body {
 .distanceFromMe { font-size: 0.75em; line-height: 20px; font-weight: bold;}
 .moreArrow { min-width: 0.6em; padding: 0 0 0 0.3em; font-size: 4em; color: #0998cc; float: right;}
 .event:hover .moreArrow i { color: white;}
-
-
-
-
-
-
 .cold { color: #002240;}
 .mild { color: #74b6e5;}
 .medium { color: #0E9ED1;}
