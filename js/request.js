@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+	
+
 	function show_results(position) {
 		var items = [],
 		latitude = position.coords.latitude,
@@ -7,7 +9,6 @@ $(document).ready(function() {
 		latitude = 52.49616, // hard-coding Berlin, since the wi-fi routers think we're in Ireland
 		longitude = 13.45396, // same here
 		fsURL = 'https://api.foursquare.com/v2/venues/trending?ll=' + latitude + ', ' + longitude + '&limit=30&radius=100000&client_id=Z34RZK1SCL3I0BH4HGQTEWEYIKCFEYAX4MZZFDWSVIJHIKYT&v=20131026&client_secret=VZLBRPB4FMSFIZ4PFY1UT0DZ1JSHPSPWVMT5YN2CVNFMICBT';
-		console.log(fsURL);
 		$.getJSON( fsURL, function(data) {
 
 			$.each( data.response.venues, function(i, venues) {
@@ -52,14 +53,50 @@ $(document).ready(function() {
 	  if (Modernizr.geolocation) {
 	    navigator.geolocation.getCurrentPosition(show_results);
 	  } else {
-	    //alert('As it turns out, there\'s no way to do location-based services without location data. So, reload the page and enable the software to determine your location.');
+	    
 	  }
 	}
 	
 	get_location();
 
+	
+$("#giveMeDataBwaHaHa").on('click', '.moreArrow', function(){
+		var detailsURL = 'https://api.foursquare.com/v2/venues/4ae778a5f964a520a5ab21e3?client_id=Z34RZK1SCL3I0BH4HGQTEWEYIKCFEYAX4MZZFDWSVIJHIKYT&v=20131027&client_secret=VZLBRPB4FMSFIZ4PFY1UT0DZ1JSHPSPWVMT5YN2CVNFMICBT',
+			items = [],
+			$this = $(this);
+		$.getJSON( detailsURL, function(data) {
 
+				var venue = data.response.venue,
+					name = venue.name,
+					hn = venue.hereNow.count;
+					distance = '5';
+					category = venue.categories[0].name;
+					phone = venue.contact.phone || 'No phone number provided';
+					url = venue.url || 'No URL provided';
+					rating = venue.rating || 'No ratings for this venue';
+					checkins = venue.stats.checkinsCount || 'No check-ins yet for this venue';
+					directions = 'Get Directions';
+					address = venue.location.address || 'No address listed for this venue';
+					postalCode = venue.location.postalCode || 'No postal code';
+					city = venue.location.city || 'No city';
+					country = venue.location.country || 'No country';
+					like = venue.like;
+					dislike = venue.dislike;
+				items.push( '<h3>' + category + '</h3>',
+							'<div class="venueContact">' + phone + '</div>',
+							'<div class="venueContact">' + url + '</div>',
+							'<div class="venueDeets"><span class="redBox">' + Math.round(rating) + '</span> out of 10 people like this place</div>',
+							'<div class="venueDeets"><span class="redBox">' + hn + '</span> People are here now</div>',
+							'<div class="venueDeets"><span class="redBox">' + checkins + '</span> Check-ins</div>',
+							'<a class="getDirections" href="">' + directions + '</a>',
+							'<div class="venueDeets"><i class="fa fa-map-marker"></i>' + address + ', ' + postalCode + ' ' + city + ', ' + country + '</div>'
 
+					);
+			
+			$this.after($('<div/>', { 'class': 'venue-info', html: items.join('')}));
+			
+		});
+	});
 
 
 
