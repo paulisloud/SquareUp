@@ -23,7 +23,7 @@ $(document).ready(function() {
 										else { return 'burning'; }
 									}
 
-				items.push( '<li class="event">',
+				items.push( '<li class="event" id="' + venues.id + '">',
 						    	'<div class="venueType"><img id="' + venues.categories[0].id + '" alt="' + venues.categories[0].pluralName + '" src="' + venues.categories[0].icon.prefix + '64' + venues.categories[0].icon.suffix + '"/></div>',
 						    	'<div class="eventInfo">',
 						    		'<h2>' + venues.name + '</h2>',
@@ -61,9 +61,11 @@ $(document).ready(function() {
 
 	
 $("#giveMeDataBwaHaHa").on('click', '.moreArrow', function(){
-		var detailsURL = 'https://api.foursquare.com/v2/venues/4ae778a5f964a520a5ab21e3?client_id=Z34RZK1SCL3I0BH4HGQTEWEYIKCFEYAX4MZZFDWSVIJHIKYT&v=20131027&client_secret=VZLBRPB4FMSFIZ4PFY1UT0DZ1JSHPSPWVMT5YN2CVNFMICBT',
-			items = [],
-			$this = $(this);
+		var $this = $(this),
+			id = $(this).closest('.event').attr('id'),
+			detailsURL = 'https://api.foursquare.com/v2/venues/' + id + '?client_id=Z34RZK1SCL3I0BH4HGQTEWEYIKCFEYAX4MZZFDWSVIJHIKYT&v=20131027&client_secret=VZLBRPB4FMSFIZ4PFY1UT0DZ1JSHPSPWVMT5YN2CVNFMICBT',
+			items = [];
+
 		$.getJSON( detailsURL, function(data) {
 
 				var venue = data.response.venue,
@@ -80,16 +82,19 @@ $("#giveMeDataBwaHaHa").on('click', '.moreArrow', function(){
 					postalCode = venue.location.postalCode || 'No postal code';
 					city = venue.location.city || 'No city';
 					country = venue.location.country || 'No country';
+					fullAddress = address + ', ' + postalCode + ' ' + city + ', ' + country;
+
 					like = venue.like;
 					dislike = venue.dislike;
 				items.push( '<h3>' + category + '</h3>',
-							'<div class="venueContact">' + phone + '</div>',
-							'<div class="venueContact">' + url + '</div>',
+							'<div class="venueContact"><a href="tel:' + phone + '">' + phone + '</a></div>',
+							'<div class="venueContact"><a href="' + url + '">' + url + '</a></div>',
 							'<div class="venueDeets"><span class="redBox">' + Math.round(rating) + '</span> out of 10 people like this place</div>',
 							'<div class="venueDeets"><span class="redBox">' + hn + '</span> People are here now</div>',
 							'<div class="venueDeets"><span class="redBox">' + checkins + '</span> Check-ins</div>',
-							'<a class="getDirections" href="">' + directions + '</a>',
-							'<div class="venueDeets"><i class="fa fa-map-marker"></i>' + address + ', ' + postalCode + ' ' + city + ', ' + country + '</div>'
+							'<a class="getDirections" href="https://maps.google.com/?q=' + fullAddress + '">' + directions + '</a>',
+							'<div class="venueDeets"><i class="fa fa-map-marker"></i><p class="venueAddress">' + fullAddress + '</p></div>',
+							'<div class="collapseVenue"><i class="fa fa-angle-up"></i></div>'
 
 					);
 			
@@ -97,7 +102,24 @@ $("#giveMeDataBwaHaHa").on('click', '.moreArrow', function(){
 			
 		});
 	});
+$("#giveMeDataBwaHaHa").on('click', '.collapseVenue', function(){
+	var el = $(this).closest('.venue-info');
+	var elHeight = el.scrollHeight;
+	
+	el.slideUp();
+	('#giveMeDataBwaHaHa').scrollTop('elHeight');
 
+});
 
 
 });
+
+
+
+
+
+
+
+
+
+
