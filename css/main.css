@@ -66,8 +66,8 @@ body {
 }
 
 .wrapper {
-    width: 90%;
-    margin: 0 5%;
+    width: 93%;
+    margin: 0 auto;
 }
 
 /* ===================
@@ -92,25 +92,31 @@ body {
 .title {
     color: white;
     float: left;
+    font-weight: normal;
+    font-size: 1.5em;
 }
-.app-header { background: #334D5C; height: 3em; margin-bottom: 1em; min-height: 4em;}
+.ease {-webkit-transition: all 200ms ease; -moz-transition: all 200ms ease; -o-transition: all 200ms ease; transition: all 200ms ease;}
+.app-header { background: #334D5C; min-height: 4.1em; padding-top: 0.6em;}
 .app-header-icon-box { float: right;  margin: 0.5em 0;}
-.filter-icons { margin: 0.2em auto .8em; width: 90%; text-align: center;}
-.app-header-icon, .filter-icons i {padding: 0.5em 0; width: 3em; border-radius: 6px; background: #5B717C; display: inline-block; float: left; color: white; margin-right: 0.5em; text-align: center;}
-.filter-icons i { width: 2em; float: none; background: #5B717C;}
+.main article header > span { font-weight: bold; margin-left: 0.6em;}
+.filter-icons { margin: 0.2em auto .8em; width: 98%;}
+.app-header-icon, .filter-icons i {padding: 0.4em 0 0.2em; width: 2.4em; border-radius: 6px; background: #5B717C; display: inline-block; float: left; color: white; margin-right: 1em; text-align: center;}
+.app-header-icon:last-child {margin-right: 0;}
+.filter-icons i:last-child { margin-right: 0;}
+.filter-icons i { width: 2.2em; padding: 0.6em 0; float: none; background: #5B717C; margin-right: 0.88em;}
 .app-header-icon:hover, .filter-icons i:hover { background: #929CA4;}
 .filter-icons i:hover { background: #929CA4;}
 #hotness { display:inline-block;}
 #hotness span {width: 3em; height: 3em; display: inline-block; border-radius: 6px;}
 .cold-filter { background: #002240;}
 .app-header-icon i, .filter-icons i { font-size: 1.5em;}
-.event { border-radius: 6px; width: 90%; height: 4em; padding: 0.5em; margin: 0 auto 1em; background: white;}
+.event { border-radius: 6px; width: 97%; height: 4em; padding: 0.5em 0 0.5em 0.5em; margin: 0 auto 1em; background: white; }
 .event:hover { background: #334D5C; color: white;}
 .venueType { float: left; background: #B5B6BA; padding: 0.5em; display: inline-block; border-radius: 6px; color: white; margin-right: 1em; min-width: 3.2em; text-align: center;}
 .venueType img { width: 48px; height: auto;}
-.event h2 { font-size: 0.9em; margin: -0.3em 0 0 0;}
+.event h2 { font-size: 0.9em; margin: -0.3em 0 0 0; height: 1.7em; overflow: hidden;}
 .eventInfo { color: #666; width: 56%; float: left;}
-.results-list { list-style: none;}
+.results-list { list-style: none; padding: 0;}
 .eventInfo .fa { font-size: 1em;}
 .eventInfo .hot .fa { color: #D15608;}
 .temperature { font-size: 0.75em; line-height: 20px;}

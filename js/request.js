@@ -7,6 +7,7 @@ $(document).ready(function() {
 		latitude = 52.49616, // hard-coding Berlin, since the wi-fi routers think we're in Ireland
 		longitude = 13.45396, // same here
 		fsURL = 'https://api.foursquare.com/v2/venues/trending?ll=' + latitude + ', ' + longitude + '&limit=30&radius=100000&client_id=Z34RZK1SCL3I0BH4HGQTEWEYIKCFEYAX4MZZFDWSVIJHIKYT&v=20131026&client_secret=VZLBRPB4FMSFIZ4PFY1UT0DZ1JSHPSPWVMT5YN2CVNFMICBT';
+		console.log(fsURL);
 		$.getJSON( fsURL, function(data) {
 
 			$.each( data.response.venues, function(i, venues) {
