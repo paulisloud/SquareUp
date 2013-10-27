@@ -13,7 +13,6 @@ textarea {
 body {
     font-size: 1em;
     line-height: 1.4;
-	background: E1E1E4;
 }
 
 ::-moz-selection {
@@ -74,10 +73,6 @@ body {
     ALL: Foursquare Theme
    =================== */
 
-.main-container {
-	background: #E1E1E4;
-}
-
 .header-container {
     
 }
@@ -86,27 +81,27 @@ body {
 .header-container,
 .footer-container,
 .main aside {
-    background: #334D5C;
+    background: #0998cc;
 }
 
 .title {
     color: white;
     float: left;
 }
-.app-header { background: #334D5C; height: 3em; margin-bottom: 1em; min-height: 4em;}
+.app-header { background: #0998cc; height: 3em; margin-bottom: 1em; min-height: 4em;}
 .app-header-icon-box { float: right;  margin: 0.5em 0;}
 .filter-icons { margin: 0.2em auto .8em; width: 90%; text-align: center;}
-.app-header-icon, .filter-icons i {padding: 0.5em 0; width: 3em; border-radius: 6px; background: #5B717C; display: inline-block; float: left; color: white; margin-right: 0.5em; text-align: center;}
-.filter-icons i { width: 2em; float: none; background: #5B717C;}
-.app-header-icon:hover, .filter-icons i:hover { background: #929CA4;}
-.filter-icons i:hover { background: #929CA4;}
+.app-header-icon, .filter-icons i {padding: 0.5em 0; width: 3em; border-radius: 6px; background: #41b8e3; display: inline-block; float: left; color: white; margin-right: 0.5em; text-align: center;}
+.filter-icons i { width: 2em; float: none; background: #0998cc;}
+.app-header-icon:hover, .filter-icons i:hover { background: #97d1e7;}
+.filter-icons i:hover { background: #41b8e3;}
 #hotness { display:inline-block;}
 #hotness span {width: 3em; height: 3em; display: inline-block; border-radius: 6px;}
 .cold-filter { background: #002240;}
 .app-header-icon i, .filter-icons i { font-size: 1.5em;}
-.event { border-radius: 6px; width: 90%; height: 4em; padding: 0.5em; margin: 0 auto 1em; background: white;}
-.event:hover { background: #334D5C; color: white;}
-.venueType { float: left; background: #B5B6BA; padding: 0.5em; display: inline-block; border-radius: 6px; color: white; margin-right: 1em; min-width: 3.2em; text-align: center;}
+.event { border: #0998cc 2px solid; border-radius: 6px; width: 90%; height: 4em; padding: 0.5em; margin: 0 auto 1em;}
+.event:hover { background: #97d1e7;}
+.venueType { float: left; background: #0998cc; padding: 0.5em; display: inline-block; border-radius: 6px; color: white; margin-right: 1em; min-width: 3.2em; text-align: center;}
 .venueType img { width: 48px; height: auto;}
 .event h2 { font-size: 0.9em; margin: -0.3em 0 0 0;}
 .eventInfo { color: #666; width: 56%; float: left;}
@@ -116,13 +111,13 @@ body {
 .temperature { font-size: 0.75em; line-height: 20px;}
 .numCheckins {margin-left: 0.2em;}
 .distanceFromMe { font-size: 0.75em; line-height: 20px; font-weight: bold;}
-.moreArrow { min-width: 0.6em; padding: 0 0 0 0.3em; font-size: 4em; color: #334D5C; float: right;}
+.moreArrow { min-width: 0.6em; padding: 0 0 0 0.3em; font-size: 4em; color: #0998cc; float: right;}
 .event:hover .moreArrow i { color: white;}
-.cold { color: #45B29D;}
-.mild { color: #45B29D;}
-.medium { color: #EFC94C;}
-.active { color: #E27A3F;}
-.burning { color: #DF5A49}
+.cold { color: #002240;}
+.mild { color: #74b6e5;}
+.medium { color: #0E9ED1;}
+.active { color: #f98600;}
+.burning { color: #DE0000;}
 
 .card { list-style: none;}
 
