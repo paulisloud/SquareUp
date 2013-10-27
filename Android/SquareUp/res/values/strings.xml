@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SquareUp</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="category">category</string>
+    <string name="distance">2.4 kilometers</string>
+    <string name="go">go</string>
+    <string name="checkins">checkins</string>
+    <string name="name">name</string>
+
+</resources>
